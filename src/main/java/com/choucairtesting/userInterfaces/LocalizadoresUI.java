@@ -9,7 +9,7 @@ public class LocalizadoresUI {
 
     public static final Target IMG_LOGOCHOUCAIR =
             Target.the("Logo Choucair").
-                    locatedBy("//img[@class='mob-retina-logo']");
+                    locatedBy("//img[@class='site-logo']");
 
     public static final Target BTN_PRIMARIA_PREPAGO =
             Target.the("Boton primaria prepago").
