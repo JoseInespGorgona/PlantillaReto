@@ -11,6 +11,9 @@ public class LocalizadoresUI {
             Target.the("Logo Choucair").
                     locatedBy("//img[@class='site-logo']");
 
+    public static final Target BTN_INICTO_SESSION = Target.the("Botón de inicio de sesión").
+            located(By.xpath("//button[@type='submit']"));
+
     public static final Target BTN_PRIMARIA_PREPAGO =
             Target.the("Boton primaria prepago").
                     locatedBy("//*[contains(text(), 'Primaria Prepagada')]");
@@ -82,7 +85,6 @@ public class LocalizadoresUI {
     public static final Target TXT_ =
             Target.the("").
                     locatedBy("");
-
 
 
     public LocalizadoresUI() throws IOException {

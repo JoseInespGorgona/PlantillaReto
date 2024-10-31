@@ -2,6 +2,7 @@ package com.choucairtesting.stepDefinitions;
 
 import com.choucairtesting.interactions.AbrirNavegador;
 import com.choucairtesting.questions.Validacion;
+import com.choucairtesting.tasks.InicioSesionTask;
 import io.cucumber.java.Before;
 import io.cucumber.java.es.Dado;
 import io.cucumber.java.es.Entonces;

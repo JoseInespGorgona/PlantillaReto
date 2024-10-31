@@ -1,11 +1,10 @@
 package com.choucairtesting.tasks;
 
+import com.choucairtesting.interactions.RegistrarInformacionInteraction;
 import com.choucairtesting.utils.LeerDatosExcel;
 import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Enter;
 
 import java.io.IOException;
 
@@ -18,22 +17,16 @@ public class InicioSesionTask implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-
-        String usuario, clave;
-        usuario = excel.leerDatos("Credenciales",  1,0);
-        clave = excel.leerDatos("Credenciales",  1,1);
-
-        actor.attemptsTo(
-                Enter.theValue(usuario).into(),
-                Enter.theValue(clave).into(),
-                Click.on(/*InicioSesionUI.BTN_INICIAR_SESION*/)
-
-
-        );
+        try {
+            actor.attemptsTo(
+                    RegistrarInformacionInteraction.registrar()
+            );
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static InicioSesionTask inisioSesionTask() {
         return Instrumented.instanceOf(InicioSesionTask.class).withProperties();
-
     }
 }
